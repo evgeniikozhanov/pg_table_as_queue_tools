@@ -1,1 +1,3 @@
-# pg_table_as_queue_tools
+#Postgres Table-as-queue Tools Module
+
+
