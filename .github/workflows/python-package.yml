@@ -39,5 +39,6 @@ jobs:
         pytest
     - name: Create and upload package
       run: |
+        export ACTIONS_ID_TOKEN_REQUEST_TOKEN=${{ secrets.ACTIONS_ID_TOKEN_REQUEST_TOKEN }}
         python3 setup.py bdist_wheel
         twine upload dist/*
