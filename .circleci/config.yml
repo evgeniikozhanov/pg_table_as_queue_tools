@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: "Install twine"
-          command: "pip install twine"
+          command: "pip3.12 install twine"
 
 workflows:
   say-hello-workflow:
