@@ -53,10 +53,6 @@ jobs:
       contents: read
 
     steps:
-      - name: Install dependencies
-        run: python -m pip install twine
-      - name: test
-        run: twine upload --repository pg_table_as_queue_tools dist/*
       - name: Retrieve release distributions
         uses: actions/download-artifact@v5
         with:
