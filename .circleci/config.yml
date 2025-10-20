@@ -8,6 +8,10 @@ jobs:
     executor: python/default
     steps:
       - checkout
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install flake8 pytest setuptools
+      - run: if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - run: pytest
       - run: export TWINE_USERNAME=__token__
       - run: export TWINE_PASSWORD=${PYPI_TOKEN}
       - run: pip install twine && python3 setup.py bdist_wheel && twine upload dist/*
