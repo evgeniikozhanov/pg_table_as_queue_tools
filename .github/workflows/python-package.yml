@@ -40,6 +40,11 @@ jobs:
     - name: Create and upload package
       run: |
         python3 setup.py bdist_wheel
+    - name: Upload dist artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: release-dists
+        path: dist/
 
   pypi-publish:
     runs-on: ubuntu-latest
