@@ -1,16 +1,16 @@
 version: 2.1
 
+orbs:
+  python: circleci/python@3.3.0
+
 jobs:
-  create-and-upload-package:
-    docker:
-      - image: cimg/base:current
+  publish:
+    executor: python/default
     steps:
       - checkout
-      - run:
-          name: "Install twine"
-          command: "pip3.12 install twine"
+      - run: pip install twine && twine upload dist/*
 
 workflows:
-  say-hello-workflow:
+  publish-workflow:
     jobs:
-      - create-and-upload-package
+      - publish
