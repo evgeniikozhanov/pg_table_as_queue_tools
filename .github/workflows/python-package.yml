@@ -41,7 +41,7 @@ jobs:
     - name: Upload dist artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: release-dists-${{ github.run_id }}
+        name: release-dists-${{ github.job }}
         path: dist/
 
   pypi-publish:
