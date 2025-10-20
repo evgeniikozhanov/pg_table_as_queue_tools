@@ -8,7 +8,7 @@ jobs:
     executor: python/default
     steps:
       - checkout
-      - run: pip install twine && twine upload dist/*
+      - run: pip install twine && python3 setup.py bdist_wheel && twine upload dist/*
 
 workflows:
   publish-workflow:
